@@ -547,3 +547,339 @@ body {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+
+/* 移动端样式 */
+.mobile-container {
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  padding: 16px;
+}
+
+.mobile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  background: #fff;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.mobile-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1f1f1f;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+}
+
+.mobile-add-btn {
+  height: 36px;
+  padding: 0 16px;
+  font-size: 14px;
+}
+
+.mobile-search-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.mobile-search-input {
+  width: 100%;
+  height: 44px;
+}
+
+.mobile-city-select {
+  width: 100%;
+}
+
+.mobile-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+}
+
+.mobile-empty {
+  text-align: center;
+  padding: 60px 20px;
+  background: #fff;
+  border-radius: 12px;
+  font-size: 16px;
+  color: #999;
+}
+
+.mobile-empty div {
+  font-size: 60px;
+  margin-bottom: 16px;
+}
+
+.mobile-company-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mobile-company-card {
+  cursor: pointer;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.mobile-card-header {
+  display: flex;
+  gap: 12px;
+}
+
+.mobile-card-images {
+  flex-shrink: 0;
+}
+
+.mobile-card-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.mobile-card-image-placeholder {
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  background: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+.mobile-card-info {
+  flex: 1 1;
+  min-width: 0;
+}
+
+.mobile-card-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1f1f1f;
+  margin: 0 0 8px 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.mobile-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.mobile-tag {
+  font-size: 12px;
+  padding: 2px 8px;
+}
+
+.mobile-card-rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #faad14;
+}
+
+.mobile-rating-text {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.mobile-card-footer {
+  padding-top: 12px;
+  border-top: 1px solid #f0f0f0;
+  margin-top: 12px;
+}
+
+.mobile-card-adder {
+  font-size: 12px;
+  color: #999;
+}
+
+.mobile-pagination {
+  padding: 16px;
+  background: #fff;
+  border-radius: 12px;
+  margin-top: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.mobile-image-upload {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  border: 1px dashed #d9d9d9;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.mobile-upload-hint {
+  font-size: 13px;
+  color: #999;
+  margin: 8px 0 0 0;
+}
+
+/* 移动端详情页样式 */
+.mobile-detail-container {
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  padding: 12px;
+}
+
+.mobile-back-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 12px;
+  width: 100%;
+  justify-content: flex-start;
+  font-size: 14px;
+}
+
+.mobile-detail-card {
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  margin-bottom: 12px;
+}
+
+.mobile-detail-header {
+  margin-bottom: 16px;
+}
+
+.mobile-detail-images {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.mobile-detail-image {
+  width: calc(50% - 4px);
+  height: 150px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.mobile-detail-info {
+  padding: 0 8px;
+}
+
+.mobile-detail-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.mobile-detail-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1f1f1f;
+  margin: 0;
+}
+
+.mobile-detail-rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #faad14;
+}
+
+.mobile-detail-rating-text {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.mobile-detail-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.mobile-detail-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+  color: #666;
+}
+
+.mobile-comment-card {
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.mobile-comment-list {
+  margin-top: 16px;
+}
+
+.mobile-comment-empty {
+  text-align: center;
+  padding: 30px 20px;
+  background: #fafafa;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #999;
+}
+
+.mobile-comment-item {
+  padding: 16px;
+  background: #fafafa;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.mobile-comment-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.mobile-comment-adder {
+  font-weight: 500;
+  color: #333;
+}
+
+.mobile-comment-rating {
+  display: flex;
+  color: #faad14;
+}
+
+.mobile-comment-content {
+  color: #333;
+  line-height: 1.5;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.mobile-comment-time {
+  font-size: 12px;
+  color: #999;
+}
+
+.mobile-detail-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+}
+
+.mobile-detail-empty {
+  text-align: center;
+  padding: 60px 20px;
+  font-size: 16px;
+  color: #999;
+}

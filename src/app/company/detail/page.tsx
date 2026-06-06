@@ -27,8 +27,8 @@ interface CompanyDetail {
   rating: number;
   adder: string;
   city: string;
-  isWeekend: boolean;
-  is_overtime: boolean;
+  is_weekend: string;
+  is_overtime: string;
   displayRating: string;
   comments: Comment[];
 }
@@ -147,24 +147,23 @@ function CompanyDetailContent() {
           <Tag icon={<EnvironmentOutlined />} color="blue">
             {company.city}
           </Tag>
-          {company.isWeekend && (
+          {company.is_weekend === '1' && (
             <Tag icon={<ClockCircleOutlined />} color="green">
               双休
             </Tag>
           )}
-          {!company.is_overtime && company.isWeekend === false && (
-            <Tag icon={<ClockCircleOutlined />} color="gray">
+          {company.is_weekend !== '1' && (
+            <Tag icon={<ClockCircleOutlined />} color="orange">
               单休
             </Tag>
           )}
-          {!company.is_overtime && (
+          {company.is_overtime === '1' ? (
+            <Tag icon={<WarningOutlined />} color="red">
+              加班
+            </Tag>
+          ) : (
             <Tag icon={<WarningOutlined />} color="purple">
               不加班
-            </Tag>
-          )}
-          {company.is_overtime && (
-            <Tag icon={<WarningOutlined />} color="orange">
-              加班
             </Tag>
           )}
         </div>

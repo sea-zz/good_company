@@ -249,19 +249,20 @@ export default function HomePage() {
                   <Tag icon={<EnvironmentOutlined />} color="blue">
                     {company.city}
                   </Tag>
-                  {company.is_weekend && (
+                  {company.is_weekend === '1' ? (
                     <Tag icon={<ClockCircleOutlined />} color="green">
                       双休
                     </Tag>
-                  )}
-                  {!company.is_overtime && (
+                  ) : <Tag icon={<ClockCircleOutlined />} color="purple">
+                      不双休
+                    </Tag>}
+                  {company.is_overtime === '1' ?  (
                     <Tag icon={<WarningOutlined />} color="purple">
-                      不加班
-                    </Tag>
-                  )}
-                  {company.is_overtime && (
-                    <Tag icon={<WarningOutlined />} color="orange">
                       加班
+                    </Tag>
+                  ) :  (
+                    <Tag icon={<WarningOutlined />} color="green">
+                      不加班
                     </Tag>
                   )}
                 </div>

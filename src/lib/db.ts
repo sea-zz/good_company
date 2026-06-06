@@ -86,8 +86,8 @@ export async function getCompanyById(id: number): Promise<Company | null> {
     return {
       ...data,
       images: typeof data.images === 'string' ? JSON.parse(data.images) : data.images,
-      isWeekend: data.isWeekend === '1',
-      isOverTime: data.isOverTime === '1',
+      is_weekend: data.is_weekend === '1' ? '1' : '0',
+      is_overtime: data.is_overtime === '1' ? '1' : '0',
     };
   } catch (error) {
     console.error('Error in getCompanyById:', error);
@@ -101,8 +101,8 @@ export async function addCompany(
   rating: number,
   adder: string,
   city: string,
-  isWeekend: boolean,
-  isOverTime: boolean
+  isWeekend: string,
+  isOverTime: string
 ): Promise<number> {
   try {
     const { data, error } = await supabase
@@ -114,8 +114,8 @@ export async function addCompany(
           rating,
           adder,
           city,
-          is_weekend: isWeekend ? '1' : '0',
-          is_overtime: isOverTime ? '1' : '0',
+          is_weekend: isWeekend,
+          is_overtime: isOverTime,
         }
       ])
       .select('id')
