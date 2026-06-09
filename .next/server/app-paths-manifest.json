@@ -1,6 +1,8 @@
 {
-  "/mobile/page": "app/mobile/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/api/companies/route": "app/api/companies/route.js",
+  "/api/companies/[id]/comments/route": "app/api/companies/[id]/comments/route.js",
+  "/page": "app/page.js",
   "/company/detail/page": "app/company/detail/page.js",
-  "/mobile/company/detail/[id]/page": "app/mobile/company/detail/[id]/page.js",
-  "/page": "app/page.js"
+  "/api/companies/[id]/route": "app/api/companies/[id]/route.js"
 }

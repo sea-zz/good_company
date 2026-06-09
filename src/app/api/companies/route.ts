@@ -1,6 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getCompanies, addCompany, getCommentsByCompanyId } from '@/lib/db';
 
+// 禁用缓存，强制动态渲染
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 export async function GET(request: NextRequest) {
   const searchParams = request.nextUrl.searchParams;
   const city = searchParams.get('city');
@@ -29,13 +33,20 @@ export async function GET(request: NextRequest) {
       })
     );
 
-    return NextResponse.json({
+    const response = NextResponse.json({
       data: companiesWithRating,
       total,
       page,
       pageSize,
       totalPages: Math.ceil(total / pageSize),
     });
+
+    // 设置响应头禁用缓存
+    response.headers.set('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
+    response.headers.set('Pragma', 'no-cache');
+    response.headers.set('Expires', '0');
+
+    return response;
   } catch (error) {
     return NextResponse.json({ error: 'Failed to fetch companies' }, { status: 500 });
   }

@@ -1,6 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { addComment, companyExists } from '@/lib/db';
 
+// 禁用缓存，强制动态渲染
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 export async function POST(
   request: NextRequest,
   { params }: { params: { id: string } }

@@ -1,8 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getCompanyById, getCommentsByCompanyId } from '@/lib/db';
 
+// 禁用缓存，强制动态渲染
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 export async function GET(
-  request: NextRequest,
+  _request: NextRequest,
   { params }: { params: { id: string } }
 ) {
   try {
@@ -32,12 +36,19 @@ export async function GET(
       avgRating = (company.rating + commentAvgRating) / 2;
     }
 
-    return NextResponse.json({
+    const response = NextResponse.json({
       ...company,
       displayRating: avgRating.toFixed(1),
       comments,
       commentCount,
     });
+
+    // 设置响应头禁用缓存
+    response.headers.set('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
+    response.headers.set('Pragma', 'no-cache');
+    response.headers.set('Expires', '0');
+
+    return response;
   } catch (error) {
     console.error(`Error fetching company ${params.id}:`, error);
     return NextResponse.json({ 
